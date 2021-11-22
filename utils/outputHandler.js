@@ -5,7 +5,7 @@ function outputHandler(solution, rootDirname, selectedChallenge){
     try{
         //Write Output file.
         challengeJSON = JSON.stringify(solution,null,4);
-        fs.writeFileSync(rootDirname + '\\challengeSolution\\solution.json', challengeJSON);        
+        fs.writeFileSync(rootDirname + '/challengeSolution/solution.json', challengeJSON);        
         
         //Log Response.
         if(selectedChallenge === 'both'){
@@ -26,7 +26,11 @@ function outputHandler(solution, rootDirname, selectedChallenge){
         }
 
         console.log(`${clr('Scroll up','g')} to see answer logged in console`)
-        console.log(`Or just find ${clr('json output','b')} in ${clr(rootDirname + '\\challengeSolution\\solution.json','b')}` +'\n')
+        if(process.platform.substr(0,3)=== 'win'){
+            console.log(`Or just find ${clr('json output','b')} in ${clr(rootDirname + '\\challengeSolution\\solution.json','b')}` +'\n')
+        }else{
+            console.log(`Or just find ${clr('json output','b')} in ${clr(rootDirname + '/challengeSolution/solution.json','b')}` +'\n')
+        }
 
     }
     catch(err){
