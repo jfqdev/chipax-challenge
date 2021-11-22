@@ -1,9 +1,8 @@
 const {getResourcesFirstPageData,getResourcesAllData} = require('./rickAndMortyApi')
 
 //Provides all Data needed from RickAndMorty Api.
-async function apiDataInjector(args={resources:Array}){
+async function apiDataInjector({resources}){
 
-  const {resources} = args
   try{
     resourcesFirstPageData = await getResourcesFirstPageData({resources})
   }catch(err){
