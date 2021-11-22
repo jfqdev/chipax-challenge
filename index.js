@@ -30,5 +30,5 @@ async function solveChallenge({resources,selectedChallenge,charParams})
 solveChallenge({
   resources: ['character','episode','location'], //Change only if Rick&Morty Api does. Do not alter order.
   selectedChallenge: 'both', // "both", "charCounter", "episodeLocations",
-  charParams:{letter:['c', 'e', 'l'], property:"name"} // charCounter params.
+  charParams:{letter:['c', 'e', 'l'], property:"name"} // Letters can be changed. Do not change property.
 })
