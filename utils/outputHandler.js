@@ -22,7 +22,7 @@ function outputHandler(solution, rootDirname, selectedChallenge){
         }else{
             logEpisodeLocationsSolution(solution[0])
             console.log(`${clr('Successfully solved Chipax Challenge','_')}`)
-            console.log(`Episode Location Execution Time: ${clr(solution[1].time,'cy')}` + '\n')
+            console.log(`Episode Location Execution Time: ${clr(solution[0].time,'cy')}` + '\n')
         }
 
         console.log(`${clr('Scroll up','g')} to see answer logged in console`)
