@@ -1,6 +1,6 @@
 const {charTotalCount, charCounter} = require('../../utils/charCounterUtils')
 const characterResourceData = require('../../mocks/charactersDataTwoEntries')
-const expect = require('chai').expect
+const {expect} = require('chai')
 
 
 describe('Char Counter Utils', ()=>{
