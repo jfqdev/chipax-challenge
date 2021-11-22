@@ -42,5 +42,8 @@ function getLocations(allData){
 }
 
 module.exports={
-  getLocations
+  getLocations,
+  episodeMapper,
+  characterMapper,
+  originLocationMapper
 }
