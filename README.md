@@ -9,6 +9,7 @@ Additionally a *solution.json* file is given as an output,  which can be found i
     ├── mocks                 # contains data for testing purposes
     ├── services              # connect with R&M Api
     ├── test                  # unit test files
+    ├── utils                 # helpers functions
     ├── index.js              # script file
     └── README.md
 
