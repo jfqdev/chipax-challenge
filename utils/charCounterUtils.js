@@ -1,20 +1,10 @@
-const {resourceResultsMapper} = require('./resourceResultsMapper')
 
 function charTotalCount( resourceData, param, char ){
     let totalCount = 0
-    if(resourceData.length > 1){
-      const resourceResultsArray = resourceResultsMapper(resourceData)
-      resourceResultsArray.map(result=>{
+    resourceData.map(result=>{
         let paramData = result[`${param}`].toLowerCase()
         totalCount += charCounter(paramData, char)
-    })
-    }else{ //In case there is only one page of records
-      resourceData.data.results.map(result=>{
-        let paramData = result[`${param}`].toLowerCase()
-        totalCount += charCounter(paramData, char)
-      })
-    }
-
+    })   
     return totalCount
 }
 

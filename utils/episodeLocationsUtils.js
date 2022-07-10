@@ -1,5 +1,3 @@
-const {resourceResultsMapper} = require('./resourceResultsMapper')
-
 function originLocationMapper(episodeList,characterList){
   results = []
   episodeList.forEach(episode=>{
@@ -18,14 +16,6 @@ function originLocationMapper(episodeList,characterList){
   return results
 }
 
-function getLocations(allData){
-  let episodeList = resourceResultsMapper(allData.episode)
-  let characterList = resourceResultsMapper(allData.character)
-  let results = originLocationMapper(episodeList,characterList)
-  return results
-}
-
 module.exports={
-  getLocations,
   originLocationMapper
 }

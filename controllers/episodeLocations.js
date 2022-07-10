@@ -1,5 +1,5 @@
 const {apiDataInjector} = require('../services/apiDataInjector')
-const {getLocations} = require('../utils/episodeLocationsUtils')
+const {originLocationMapper} = require('../utils/episodeLocationsUtils')
 
 async function solveEpisodeLocations({resources,charCounterOutput,start}){
   allData= {}
@@ -8,7 +8,7 @@ async function solveEpisodeLocations({resources,charCounterOutput,start}){
   }else{
     allData = charCounterOutput.allData
   }
-  let results = getLocations(allData)
+  let results = originLocationMapper(allData.episode, allData.character)
   const [seconds, nanoseconds] = process.hrtime(start)
   const executionTime = `${seconds}s ${ nanoseconds / 1000000 }ms`
   
