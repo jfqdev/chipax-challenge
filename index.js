@@ -8,17 +8,17 @@ async function solveChallenge({resources,selectedChallenge,charParams})
   let charCounterOutput,episodeLocationsOutput,solution
   switch (selectedChallenge) {
     case "both":
-      charCounterOutput = await solveCharCounter({resources,charParams,start})
+      charCounterOutput = await solveCharCounter(resources,charParams,start)
       const startEpisodeTimer = process.hrtime()
-      episodeLocationsOutput = await solveEpisodeLocations({resources,charCounterOutput,start: startEpisodeTimer})
+      episodeLocationsOutput = await solveEpisodeLocations(resources,startEpisodeTimer,charCounterOutput)
       solution = [charCounterOutput.solution, episodeLocationsOutput]
       break;
     case "charCounter":
-      charCounterOutput= await solveCharCounter({resources,charParams,start})
+      charCounterOutput= await solveCharCounter(resources,charParams,start)
       solution = [charCounterOutput.solution]
       break;
     case "episodeLocations":
-      episodeLocationsOutput = await solveEpisodeLocations({resources,start})
+      episodeLocationsOutput = await solveEpisodeLocations(resources,start)
       solution = [episodeLocationsOutput]
       break;
   }

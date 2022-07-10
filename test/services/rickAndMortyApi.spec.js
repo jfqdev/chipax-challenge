@@ -7,7 +7,7 @@ describe('Rick and Morty Api Service', ()=>{
   let allData={}
   describe('getResourcesFirstPageData - Get /Character/Episode/Location first page data from Api',()=>{
     it('Results length should match resources length (3)', async()=>{
-      resourcesFirstPageData = await getResourcesFirstPageData({resources})      
+      resourcesFirstPageData = await getResourcesFirstPageData(resources)      
       expect(resourcesFirstPageData.length).to.be.equal(resources.length)
     })
     it('Valides first page status for every resource', ()=>{
@@ -27,7 +27,7 @@ describe('Rick and Morty Api Service', ()=>{
   })
   describe('getResourcesAllData - Get /Character/Episode/Location all pages data from Api',()=>{    
     it('Valides all pages status and data existance for character resource', async()=>{
-      let resourcesAllData = getResourcesAllData({resourcesFirstPageData,resources})
+      let resourcesAllData = getResourcesAllData(resourcesFirstPageData,resources)
       allData.character = await resourcesAllData.character
       allData.episode = await resourcesAllData.episode
       allData.location = await resourcesAllData.location
