@@ -58,10 +58,6 @@ function logEpisodeLocationsSolution(solution){
 
 }
 
-function changeStringColor(){
-
-}
-
 module.exports={
     outputHandler
 }
