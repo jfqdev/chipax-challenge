@@ -1,7 +1,7 @@
 
 function charTotalCount( resourceData, param, char ){
     let totalCount = 0
-    resourceData.map(result=>{
+    resourceData.forEach(result=>{
         let paramData = result[`${param}`].toLowerCase()
         totalCount += charCounter(paramData, char)
     })   

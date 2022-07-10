@@ -12,7 +12,7 @@ describe('Rick and Morty Api Service', ()=>{
     })
     it('Valides first page status for every resource', ()=>{
       let status = 200
-      resourcesFirstPageData.map(page=>{
+      resourcesFirstPageData.forEach(page=>{
         if(page.status !== 200){
           status = page.status
         }
@@ -20,7 +20,7 @@ describe('Rick and Morty Api Service', ()=>{
       expect(status).to.be.equal(200,`Res status must be 200`)
     })
     it('Validates data existance of first page for every resource', ()=>{
-      resourcesFirstPageData.map(page=>{
+      resourcesFirstPageData.forEach(page=>{
         expect(page.data).to.not.be.empty
       })
     })
@@ -31,19 +31,19 @@ describe('Rick and Morty Api Service', ()=>{
       allData.character = await resourcesAllData.character
       allData.episode = await resourcesAllData.episode
       allData.location = await resourcesAllData.location
-      allData.character.map(page=>{
+      allData.character.forEach(page=>{
         expect(page.status).to.be.equal(200)
         expect(page.data).to.not.be.empty
       })
     })
     it('Valides all pages status and data existance for episode resource', ()=>{
-      allData.episode.map(page=>{
+      allData.episode.forEach(page=>{
         expect(page.status).to.be.equal(200)
         expect(page.data).to.not.be.empty
       })
     })
     it('Valides all pages status and data existance for location resource', ()=>{
-      allData.location.map(page=>{
+      allData.location.forEach(page=>{
         expect(page.status).to.be.equal(200)
         expect(page.data).to.not.be.empty
       })

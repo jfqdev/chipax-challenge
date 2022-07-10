@@ -42,7 +42,7 @@ function outputHandler(solution, rootDirname, selectedChallenge){
 
 function logCharCounterSolution(solution){
     console.log(`${clr('Char Counter Solution','_')}`)
-    solution.results.map(res=>{
+    solution.results.forEach(res=>{
         console.log(`"${clr(res.char,'g')}" was found ${clr(res.count,'cy')} times iterating over ${clr(res.resource,'g')} resource at "${clr('name','cy')}" property ` )
     })
 
@@ -51,7 +51,7 @@ function logCharCounterSolution(solution){
 function logEpisodeLocationsSolution(solution){
 
     console.log("\n" + `${clr('Episode Locations Solution','_')}`)
-    solution.results.map(obj=>{
+    solution.results.forEach(obj=>{
         console.log(`Among the characters in ${clr(obj.episode,'cy')} can be found ${clr(obj.locations.length,'cy')}${obj.locations.length<=9? " ":""} different origin locations:`)
         console.log(`${clr(obj.locations,'g')}` + '\n')
     })
