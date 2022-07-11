@@ -1,11 +1,11 @@
 const {apiDataInjector} = require('../services/apiDataInjector')
 const {originLocationMapper} = require('../utils/episodeLocationsUtils')
 
-async function solveEpisodeLocations(resources,start,charCounterOutput){
+async function solveEpisodeLocations(resources, start, charCounterOutput) {
   let allData = {}
-  if(!charCounterOutput){
+  if(!charCounterOutput) {
     allData = await apiDataInjector(resources)
-  }else{
+  }else {
     allData = charCounterOutput.allData
   }
   let results = originLocationMapper(allData.episode, allData.character)

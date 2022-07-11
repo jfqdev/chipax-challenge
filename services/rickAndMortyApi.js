@@ -1,17 +1,17 @@
 const axios = require('axios').create({ baseURL: "https://rickandmortyapi.com/api/"})
 
 //Initial Data to deduce pagination.
-function getResourcesFirstPageData(resources){
+function getResourcesFirstPageData(resources) {
   let resourcesFirstPageData = resources.map(resource => axios.get(`${resource}`))
   return Promise.all(resourcesFirstPageData)
 }
 
-function getResourcesAllData(resourcesFirstPageData,resources){
-  let resourcesAllData = resources.map((resource,index)=>{
+function getResourcesAllData(resourcesFirstPageData, resources){
+  let resourcesAllData = resources.map((resource, index)=>{
     let totalPages = resourcesFirstPageData[index].data.info.pages
     let allData = Array(totalPages-1).fill()
     for (let step = 1; step <= totalPages; step++) {
-        allData[step - 1] = axios.get(`${resource}/?page=${step}`)
+      allData[step - 1] = axios.get(`${resource}/?page=${step}`)
     }
     return allData
   })

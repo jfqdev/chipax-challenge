@@ -2,8 +2,8 @@ const {getResourcesFirstPageData,getResourcesAllData} = require('./rickAndMortyA
 const {resourceResultsMapper} = require('../utils/resourceResultsMapper')
 
 //Provides all Data needed from RickAndMorty Api.
-async function apiDataInjector(resources){
-  let resourcesFirstPageData,resourcesAllData
+async function apiDataInjector(resources) {
+  let resourcesFirstPageData, resourcesAllData
   try{
     resourcesFirstPageData = await getResourcesFirstPageData(resources)
   }catch(err){
@@ -13,21 +13,21 @@ async function apiDataInjector(resources){
 
   const allData = {}
 
-  try{
-    resourcesAllData = getResourcesAllData(resourcesFirstPageData,resources)
+  try {
+    resourcesAllData = getResourcesAllData(resourcesFirstPageData, resources)
     allData.character = await resourcesAllData.character
     allData.character = resourceResultsMapper(allData.character)
     allData.episode = await resourcesAllData.episode
     allData.episode = resourceResultsMapper(allData.episode)
     allData.location = await resourcesAllData.location
     allData.location = resourceResultsMapper(allData.location)
-  }catch(err){
+  }catch(err) {
     console.log(err.message)
     process.exit()
   }
   return allData    
 }
 
-module.exports={
+module.exports = {
   apiDataInjector    
 }
