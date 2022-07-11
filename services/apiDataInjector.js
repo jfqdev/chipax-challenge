@@ -3,7 +3,7 @@ const {resourceResultsMapper} = require('../utils/resourceResultsMapper')
 
 //Provides all Data needed from RickAndMorty Api.
 async function apiDataInjector(resources){
-  
+  let resourcesFirstPageData,resourcesAllData
   try{
     resourcesFirstPageData = await getResourcesFirstPageData(resources)
   }catch(err){

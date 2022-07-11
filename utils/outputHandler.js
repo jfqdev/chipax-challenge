@@ -4,7 +4,7 @@ const {stringChangeColor: clr} = require('../utils/stringChangeColor')
 function outputHandler(solution, rootDirname, selectedChallenge){
     try{
         //Write Output file.
-        challengeJSON = JSON.stringify(solution,null,4);
+        const challengeJSON = JSON.stringify(solution,null,4);
         fs.writeFileSync(rootDirname + '/challengeSolution/solution.json', challengeJSON);        
         
         //Log Response.

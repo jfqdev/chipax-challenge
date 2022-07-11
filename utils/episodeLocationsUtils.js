@@ -1,12 +1,12 @@
 function originLocationMapper(episodeList,characterList){
-  results = []
+  const results = []
   episodeList.forEach(episode=>{
     const episodeOriginLocations = []
     episode.characters.forEach(char=>{            
-      splitedChar = char.split("/");
-      charID = splitedChar[splitedChar.length - 1]
-      indexInCharacterList = charID - 1
-      characterOrigin = characterList[indexInCharacterList].origin.name;
+      const splitedChar = char.split("/");
+      const charID = splitedChar[splitedChar.length - 1]
+      const indexInCharacterList = charID - 1
+      const characterOrigin = characterList[indexInCharacterList].origin.name;
       if(episodeOriginLocations.indexOf(characterOrigin) === -1){
         episodeOriginLocations.push(characterOrigin)
       }            

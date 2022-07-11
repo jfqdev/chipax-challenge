@@ -3,7 +3,7 @@ const {apiDataInjector} = require('../services/apiDataInjector')
 
 async function solveCharCounter(resources, charParams, start){
 
-  allData = await apiDataInjector(resources)
+  const allData = await apiDataInjector(resources)
 
   let characterCharCount = charTotalCount(allData.character, charParams.property, charParams.letter[0])
   let episodeCharCount = charTotalCount(allData.episode, charParams.property, charParams.letter[1])

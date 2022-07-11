@@ -5,11 +5,11 @@ const {outputHandler} = require('./utils/outputHandler')
 async function solveChallenge({resources,selectedChallenge,charParams})
 {
   const start = process.hrtime()
-  let charCounterOutput,episodeLocationsOutput,solution
+  let charCounterOutput,episodeLocationsOutput,solution,startEpisodeTimer
   switch (selectedChallenge) {
     case "both":
       charCounterOutput = await solveCharCounter(resources,charParams,start)
-      const startEpisodeTimer = process.hrtime()
+      startEpisodeTimer = process.hrtime()
       episodeLocationsOutput = await solveEpisodeLocations(resources,startEpisodeTimer,charCounterOutput)
       solution = [charCounterOutput.solution, episodeLocationsOutput]
       break;
