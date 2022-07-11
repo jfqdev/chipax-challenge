@@ -11,11 +11,12 @@ async function solveEpisodeLocations(resources, start, charCounterOutput) {
   let results = originLocationMapper(allData.episode, allData.character)
   const [seconds, nanoseconds] = process.hrtime(start)
   const executionTime = `${seconds}s ${ nanoseconds / 1000000 }ms`
+  const inTime = seconds <= 2 ? true : false
   
   return {
     exercise_name: "Episode locations",
     time: executionTime,
-    in_time: true,
+    in_time: inTime,
     results
   }
 }
